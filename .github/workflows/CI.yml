@@ -27,6 +27,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+        
+    - name: Make mvnw executable
+      working-directory: demo
+      run: chmod +x mvnw
+      
     - name: Run Maven tests
       working-directory: demo
       run: ./mvnw -B test
